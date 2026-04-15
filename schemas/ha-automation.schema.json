@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/ha-automation.schema.json",
+  "description": "Home Assistant automation event sent to Scotty /ingest/event",
+  "type": "object",
+  "required": ["event_type", "automation_id", "event_id", "data"],
+  "properties": {
+    "event_type": { "const": "ha_automation" },
+    "automation_id": { "type": "string", "minLength": 1 },
+    "event_id": { "type": "string", "minLength": 1 },
+    "data": { "type": "object" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+"""Personal Event Mesh - Machine-enforced event contracts for homelab services."""
+
+__version__ = "0.1.0"
+
+from personal_event_mesh.registry import CapabilityReport, register_capability
+from personal_event_mesh.validate import validate, validate_or_raise
+
+__all__ = [
+    "validate",
+    "validate_or_raise",
+    "register_capability",
+    "CapabilityReport",
+]

@@ -1,0 +1,15 @@
+{
+  "event_type": "deal_alert",
+  "source": "price_tracker",
+  "item_name": "Weber Genesis E-325s",
+  "current_price": 649.99,
+  "previous_price": 899.99,
+  "threshold_price": 700.00,
+  "currency": "USD",
+  "url": "https://example.com/product/weber-genesis",
+  "data": {
+    "retailer": "Home Depot",
+    "condition": "new",
+    "discount_pct": 27.8
+  }
+}

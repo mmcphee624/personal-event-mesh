@@ -1,0 +1,12 @@
+{
+  "event_type": "monitoring_event",
+  "source": "diun",
+  "severity": "info",
+  "title": "Docker image update: pihole/pihole",
+  "message": "Docker image update: pihole/pihole (status: new). Hub: https://hub.docker.com/r/pihole/pihole",
+  "data": {
+    "image": "pihole/pihole",
+    "status": "new",
+    "hub_link": "https://hub.docker.com/r/pihole/pihole"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "service": "price-tracker",
+  "version": "0.1.0",
+  "mesh_version": "0.1.0",
+  "contracts": {
+    "publishes": [
+      "deal-alert@1.0.0"
+    ],
+    "consumes": []
+  },
+  "status": "healthy"
+}

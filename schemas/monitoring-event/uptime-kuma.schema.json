@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/monitoring-event/uptime-kuma.schema.json",
+  "description": "Data shape for monitoring_event with source=uptime_kuma",
+  "type": "object",
+  "required": ["monitor_name", "status"],
+  "properties": {
+    "monitor_name": { "type": "string" },
+    "monitor_url": { "type": "string" },
+    "status": { "type": "string", "enum": ["up", "down"] },
+    "ping_ms": { "type": ["number", "null"] },
+    "downtime_duration": { "type": ["number", "null"] }
+  },
+  "additionalProperties": true
+}

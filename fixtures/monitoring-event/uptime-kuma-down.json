@@ -1,0 +1,14 @@
+{
+  "event_type": "monitoring_event",
+  "source": "uptime_kuma",
+  "severity": "critical",
+  "title": "Scotty is DOWN",
+  "message": "Monitor 'Scotty' detected as DOWN. Last ping: 1200ms.",
+  "data": {
+    "monitor_name": "Scotty",
+    "monitor_url": "http://100.74.231.24:8420/health",
+    "status": "down",
+    "ping_ms": 1200,
+    "downtime_duration": 120
+  }
+}

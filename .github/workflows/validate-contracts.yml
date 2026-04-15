@@ -1,0 +1,66 @@
+name: Validate Event Contracts
+
+on:
+  workflow_call:
+    inputs:
+      mesh-version:
+        description: 'Event mesh version tag (e.g., v0.1.0)'
+        required: true
+        type: string
+      fixture-dir:
+        description: 'Path to test fixtures directory'
+        required: false
+        type: string
+        default: 'tests/fixtures'
+      schema-map:
+        description: 'JSON mapping of fixture glob patterns to schema names'
+        required: true
+        type: string
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install event mesh at pinned version
+        run: pip install "personal-event-mesh @ git+https://github.com/mmcphee624/personal-event-mesh@${{ inputs.mesh-version }}"
+      - name: Validate fixtures against schemas
+        env:
+          FIXTURE_DIR: ${{ inputs.fixture-dir }}
+          SCHEMA_MAP: ${{ inputs.schema-map }}
+        run: |
+          python -c "
+          import json, glob, os, sys
+          from personal_event_mesh.testing import assert_contract_compatible
+
+          fixture_dir = os.environ['FIXTURE_DIR']
+          schema_map = json.loads(os.environ['SCHEMA_MAP'])
+          errors = 0
+          checked = 0
+
+          for pattern, schema_name in schema_map.items():
+              matches = glob.glob(os.path.join(fixture_dir, pattern))
+              if not matches:
+                  print(f'  WARNING: No fixtures matched {pattern}')
+                  continue
+              for fixture_path in sorted(matches):
+                  with open(fixture_path) as f:
+                      event = json.load(f)
+                  try:
+                      assert_contract_compatible(event, schema_name)
+                      print(f'  OK: {fixture_path} -> {schema_name}')
+                      checked += 1
+                  except AssertionError as e:
+                      print(f'  FAIL: {fixture_path}')
+                      print(f'    {e}')
+                      errors += 1
+
+          print(f'\n{checked} fixtures validated, {errors} failures.')
+          if errors:
+              sys.exit(1)
+          "

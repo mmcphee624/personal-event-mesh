@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/ingest-event.schema.json",
+  "description": "Discriminated union of all event types accepted by POST /ingest/event",
+  "oneOf": [
+    { "$ref": "ha-automation.schema.json" },
+    { "$ref": "monitoring-event.schema.json" },
+    { "$ref": "deploy-event.schema.json" },
+    { "$ref": "deal-alert.schema.json" },
+    { "$ref": "text-event.schema.json" }
+  ]
+}

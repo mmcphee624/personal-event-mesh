@@ -1,0 +1,16 @@
+{
+  "event_type": "deploy_event",
+  "source": "github_actions",
+  "repo": "homelab",
+  "status": "failure",
+  "deployed_services": {
+    "pi": ["scotty"],
+    "vps": []
+  },
+  "failed_services": {
+    "pi": [],
+    "vps": ["control-plane"]
+  },
+  "run_url": "https://github.com/mmcphee624/homelab/actions/runs/12346",
+  "commit_sha": "def456abc789"
+}

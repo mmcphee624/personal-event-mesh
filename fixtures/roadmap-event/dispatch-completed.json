@@ -1,0 +1,9 @@
+{
+  "event_type": "dispatch.completed",
+  "idea_id": 42,
+  "data": {
+    "pr_url": "https://github.com/mmcphee624/personal-assistant/pull/15",
+    "branch": "feature/co2-brief",
+    "outcome": "success"
+  }
+}

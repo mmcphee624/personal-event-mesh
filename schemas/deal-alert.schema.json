@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/deal-alert.schema.json",
+  "description": "Price drop or deal alert from price-tracker",
+  "type": "object",
+  "required": ["event_type", "source", "item_name", "current_price"],
+  "properties": {
+    "event_type": { "const": "deal_alert" },
+    "source": { "type": "string", "enum": ["price_tracker"] },
+    "item_name": { "type": "string", "minLength": 1 },
+    "current_price": { "type": "number" },
+    "previous_price": { "type": ["number", "null"] },
+    "threshold_price": { "type": ["number", "null"] },
+    "currency": { "type": "string", "default": "USD" },
+    "url": { "type": "string" },
+    "data": { "type": "object" }
+  },
+  "additionalProperties": false
+}
