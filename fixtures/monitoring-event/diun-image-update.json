@@ -2,11 +2,11 @@
   "event_type": "monitoring_event",
   "source": "diun",
   "severity": "info",
-  "title": "Docker image update: pihole/pihole",
-  "message": "Docker image update: pihole/pihole (status: new). Hub: https://hub.docker.com/r/pihole/pihole",
+  "title": "Docker image update: nginx/nginx",
+  "message": "Docker image update: nginx/nginx (status: new). Hub: https://hub.docker.com/r/nginx/nginx",
   "data": {
-    "image": "pihole/pihole",
+    "image": "nginx/nginx",
     "status": "new",
-    "hub_link": "https://hub.docker.com/r/pihole/pihole"
+    "hub_link": "https://hub.docker.com/r/nginx/nginx"
   }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/roadmap-event.schema.json",
-  "description": "Roadmap lifecycle events from control-plane to Scotty /ingest/roadmap-event",
+  "description": "Roadmap lifecycle events between planning and consumer services",
   "type": "object",
   "required": ["event_type", "idea_id"],
   "properties": {

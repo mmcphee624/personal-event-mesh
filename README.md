@@ -1,10 +1,10 @@
 # personal-event-mesh
 
-Machine-enforced event contracts for personal homelab services.
+Machine-enforced event contracts for personal services.
 
 ## What this is
 
-JSON Schema definitions + a Python validation package for the events flowing between homelab services (Scotty, control-plane, price-tracker, homelab infra). Catches contract drift at CI time, not at 3am.
+JSON Schema definitions + a Python validation package for the events flowing between your services. Catches contract drift at CI time, not at 3am.
 
 ## Install
 
@@ -30,7 +30,7 @@ validate_or_raise(event, "monitoring-event")  # raises ValidationError
 from personal_event_mesh import register_capability
 
 report = register_capability(
-    name="price-tracker",
+    name="my-producer",
     version="0.1.0",
     schemas={
         "publishes": ["deal-alert@1.0.0"],
@@ -51,15 +51,15 @@ assert_contract_compatible(event, "monitoring-event")
 
 ## Schemas
 
-| Schema | Description | Producers | Consumers |
-|---|---|---|---|
-| ha-automation | Home Assistant automation events | HA | Scotty |
-| monitoring-event | Infrastructure monitoring alerts | n8n, Grafana, GitHub Actions | Scotty |
-| text-event | Plain text fallback | n8n, deploy.yml | Scotty |
-| roadmap-event | Roadmap lifecycle events | control-plane | Scotty |
-| deploy-event | Structured deploy notifications | GitHub Actions | Scotty |
-| deal-alert | Price drop alerts | price-tracker | Scotty |
-| capability-report | GET /capabilities response | All services | control-plane |
+| Schema | Description |
+|---|---|
+| ha-automation | Home automation events |
+| monitoring-event | Infrastructure monitoring alerts |
+| text-event | Plain text fallback |
+| roadmap-event | Roadmap lifecycle events |
+| deploy-event | Structured deploy notifications |
+| deal-alert | Price drop alerts |
+| capability-report | GET /capabilities response |
 
 ## Adding a new event type
 

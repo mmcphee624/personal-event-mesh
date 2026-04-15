@@ -48,7 +48,7 @@ class TestValidate:
         assert len(errors) > 0
 
     def test_valid_text_event(self):
-        event = {"text": "Deployed to Pi: scotty."}
+        event = {"text": "Deployed services: web-app."}
         assert validate(event, "text-event") == []
 
     def test_text_event_empty_string(self):
@@ -76,7 +76,7 @@ class TestValidate:
         event = {
             "event_type": "deploy_event",
             "source": "github_actions",
-            "repo": "homelab",
+            "repo": "my-infra",
             "status": "success",
         }
         assert validate(event, "deploy-event") == []
@@ -92,7 +92,7 @@ class TestValidate:
 
     def test_valid_capability_report(self):
         report = {
-            "service": "scotty",
+            "service": "my-consumer",
             "version": "0.1.0",
             "mesh_version": "0.1.0",
             "contracts": {
@@ -105,7 +105,7 @@ class TestValidate:
 
     def test_capability_report_invalid_contract_format(self):
         report = {
-            "service": "scotty",
+            "service": "my-consumer",
             "version": "0.1.0",
             "mesh_version": "0.1.0",
             "contracts": {

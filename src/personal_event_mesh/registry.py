@@ -38,10 +38,10 @@ def register_capability(
     """Build a CapabilityReport for this service.
 
     Args:
-        name: Service name (e.g., "scotty", "price-tracker")
+        name: Service name (e.g., "my-api", "my-worker")
         version: Service version (e.g., "0.1.0")
         schemas: Dict with "publishes" and/or "consumes" lists
-                 (e.g., {"publishes": ["deal-alert@1.0.0"], "consumes": []})
+                 (e.g., {"publishes": ["monitoring-event@1.0.0"], "consumes": []})
         mesh_version: Override mesh version. Defaults to installed package version.
     """
     from personal_event_mesh import __version__

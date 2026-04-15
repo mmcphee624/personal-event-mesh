@@ -1,4 +1,4 @@
-"""Personal Event Mesh - Machine-enforced event contracts for homelab services."""
+"""Personal Event Mesh - Machine-enforced event contracts for personal services."""
 
 __version__ = "0.1.0"
 

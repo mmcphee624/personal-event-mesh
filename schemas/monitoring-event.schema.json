@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/monitoring-event.schema.json",
-  "description": "Monitoring event from n8n workflows, Grafana, or GitHub Actions",
+  "description": "Monitoring event from automation workflows, alerting systems, or CI pipelines",
   "type": "object",
   "required": ["event_type", "source", "title"],
   "properties": {

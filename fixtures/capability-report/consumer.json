@@ -1,5 +1,5 @@
 {
-  "service": "scotty",
+  "service": "my-consumer",
   "version": "0.1.0",
   "mesh_version": "0.1.0",
   "contracts": {

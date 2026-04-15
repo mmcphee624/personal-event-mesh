@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/deal-alert.schema.json",
-  "description": "Price drop or deal alert from price-tracker",
+  "description": "Price drop or deal alert from a tracking service",
   "type": "object",
   "required": ["event_type", "source", "item_name", "current_price"],
   "properties": {

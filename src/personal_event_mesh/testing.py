@@ -14,7 +14,7 @@ FIXTURES_DIR = Path(__file__).resolve().parent.parent.parent / "fixtures"
 def load_fixture(fixture_path: str) -> dict:
     """Load a golden test fixture by relative path.
 
-    Example: load_fixture("ha-automation/hacs-update.json")
+    Example: load_fixture("monitoring-event/uptime-kuma-down.json")
     """
     path = FIXTURES_DIR / fixture_path
     if not path.exists():

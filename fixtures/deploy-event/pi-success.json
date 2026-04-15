@@ -1,16 +1,16 @@
 {
   "event_type": "deploy_event",
   "source": "github_actions",
-  "repo": "homelab",
+  "repo": "my-infra",
   "status": "success",
   "deployed_services": {
-    "pi": ["scotty", "pihole"],
-    "vps": ["n8n"]
+    "pi": ["web-app", "dns"],
+    "vps": ["automation"]
   },
   "failed_services": {
     "pi": [],
     "vps": []
   },
-  "run_url": "https://github.com/mmcphee624/homelab/actions/runs/12345",
+  "run_url": "https://github.com/example/my-infra/actions/runs/12345",
   "commit_sha": "abc123def456"
 }

@@ -6,7 +6,7 @@ from personal_event_mesh.registry import CapabilityReport, register_capability
 class TestRegisterCapability:
     def test_basic_registration(self):
         report = register_capability(
-            name="price-tracker",
+            name="my-producer",
             version="0.1.0",
             schemas={
                 "publishes": ["deal-alert@1.0.0"],
@@ -14,7 +14,7 @@ class TestRegisterCapability:
             },
         )
         assert isinstance(report, CapabilityReport)
-        assert report.service == "price-tracker"
+        assert report.service == "my-producer"
         assert report.version == "0.1.0"
         assert report.mesh_version == "0.1.0"  # from __version__
         assert report.publishes == ["deal-alert@1.0.0"]
@@ -23,7 +23,7 @@ class TestRegisterCapability:
 
     def test_custom_mesh_version(self):
         report = register_capability(
-            name="scotty",
+            name="my-consumer",
             version="0.2.0",
             schemas={"consumes": ["monitoring-event@1.0.0"]},
             mesh_version="0.1.0",
@@ -32,7 +32,7 @@ class TestRegisterCapability:
 
     def test_to_dict(self):
         report = register_capability(
-            name="scotty",
+            name="my-consumer",
             version="0.1.0",
             schemas={
                 "publishes": [],
@@ -40,7 +40,7 @@ class TestRegisterCapability:
             },
         )
         d = report.to_dict()
-        assert d["service"] == "scotty"
+        assert d["service"] == "my-consumer"
         assert d["contracts"]["consumes"] == [
             "ha-automation@1.0.0",
             "monitoring-event@1.0.0",
@@ -52,7 +52,7 @@ class TestRegisterCapability:
         from personal_event_mesh.validate import validate
 
         report = register_capability(
-            name="scotty",
+            name="my-consumer",
             version="0.1.0",
             schemas={
                 "publishes": [],
