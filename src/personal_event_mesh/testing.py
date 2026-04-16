@@ -7,8 +7,8 @@ from pathlib import Path
 
 from personal_event_mesh.validate import validate
 
-# Fixtures ship alongside the package source
-FIXTURES_DIR = Path(__file__).resolve().parent.parent.parent / "fixtures"
+# Fixtures ship inside the package
+FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
 
 
 def load_fixture(fixture_path: str) -> dict:

@@ -1,0 +1,16 @@
+{
+  "event_type": "deploy_event",
+  "source": "github_actions",
+  "repo": "my-infra",
+  "status": "failure",
+  "deployed_services": {
+    "pi": ["web-app"],
+    "vps": []
+  },
+  "failed_services": {
+    "pi": [],
+    "vps": ["api-gateway"]
+  },
+  "run_url": "https://github.com/example/my-infra/actions/runs/12346",
+  "commit_sha": "def456abc789"
+}

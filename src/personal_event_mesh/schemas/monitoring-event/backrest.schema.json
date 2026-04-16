@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/monitoring-event/backrest.schema.json",
+  "description": "Data shape for monitoring_event with source=backrest",
+  "type": "object",
+  "required": ["snapshot_id", "check_passed"],
+  "properties": {
+    "snapshot_id": { "type": "string" },
+    "snapshot_time": { "type": "string" },
+    "file_count": { "type": "integer" },
+    "check_passed": { "type": "boolean" },
+    "repo": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,10 @@
+{
+  "event_type": "idea.enriched",
+  "idea_id": 42,
+  "data": {
+    "title": "Add CO2 monitoring to daily brief",
+    "category": "feature",
+    "complexity": "medium",
+    "impact": "high"
+  }
+}

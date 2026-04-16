@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/deploy-event.schema.json",
+  "description": "Structured deploy notification from GitHub Actions",
+  "type": "object",
+  "required": ["event_type", "source", "repo", "status"],
+  "properties": {
+    "event_type": { "const": "deploy_event" },
+    "source": { "const": "github_actions" },
+    "repo": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["success", "partial", "failure"] },
+    "deployed_services": {
+      "type": "object",
+      "properties": {
+        "pi": { "type": "array", "items": { "type": "string" } },
+        "vps": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "failed_services": {
+      "type": "object",
+      "properties": {
+        "pi": { "type": "array", "items": { "type": "string" } },
+        "vps": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "run_url": { "type": "string", "format": "uri" },
+    "commit_sha": { "type": "string" }
+  },
+  "additionalProperties": false
+}

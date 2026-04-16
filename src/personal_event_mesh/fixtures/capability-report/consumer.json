@@ -1,0 +1,17 @@
+{
+  "service": "my-consumer",
+  "version": "0.1.0",
+  "mesh_version": "0.1.0",
+  "contracts": {
+    "publishes": [],
+    "consumes": [
+      "ha-automation@1.0.0",
+      "monitoring-event@1.0.0",
+      "text-event@1.0.0",
+      "roadmap-event@1.0.0",
+      "deploy-event@1.0.0",
+      "deal-alert@1.0.0"
+    ]
+  },
+  "status": "healthy"
+}

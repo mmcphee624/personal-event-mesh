@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/roadmap-event.schema.json",
+  "description": "Roadmap lifecycle events between planning and consumer services",
+  "type": "object",
+  "required": ["event_type", "idea_id"],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "idea.enriched",
+        "idea.approved",
+        "dispatch.started",
+        "dispatch.completed",
+        "dispatch.failed",
+        "build.plan_ready",
+        "build.completed"
+      ]
+    },
+    "idea_id": { "type": "integer" },
+    "data": { "type": "object" }
+  },
+  "additionalProperties": false
+}

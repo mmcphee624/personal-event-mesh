@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/monitoring-event.schema.json",
+  "description": "Monitoring event from automation workflows, alerting systems, or CI pipelines",
+  "type": "object",
+  "required": ["event_type", "source", "title"],
+  "properties": {
+    "event_type": { "const": "monitoring_event" },
+    "source": { "$ref": "_meta.schema.json#/$defs/monitoring_source" },
+    "severity": { "$ref": "_meta.schema.json#/$defs/severity" },
+    "title": { "type": "string", "minLength": 1 },
+    "message": { "type": "string" },
+    "data": { "type": "object" }
+  },
+  "additionalProperties": false
+}
