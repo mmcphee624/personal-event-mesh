@@ -1,0 +1,14 @@
+{
+  "event_type": "monitoring_event",
+  "source": "backrest",
+  "severity": "info",
+  "title": "Weekly backup verification: passed",
+  "message": "Snapshot abc123 from 2026-04-12T04:00:00Z, 15234 files, restic check passed",
+  "data": {
+    "snapshot_id": "abc123",
+    "snapshot_time": "2026-04-12T04:00:00Z",
+    "file_count": 15234,
+    "check_passed": true,
+    "repo": "local:/backup/restic-repo"
+  }
+}

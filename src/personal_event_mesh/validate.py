@@ -9,8 +9,8 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
-# Schemas ship alongside the package source
-SCHEMAS_DIR = Path(__file__).resolve().parent.parent.parent / "schemas"
+# Schemas ship inside the package
+SCHEMAS_DIR = Path(__file__).resolve().parent / "schemas"
 
 
 @lru_cache(maxsize=32)

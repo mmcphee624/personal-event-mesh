@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/capability-report.schema.json",
+  "description": "Response from GET /capabilities on any mesh service",
+  "type": "object",
+  "required": ["service", "version", "mesh_version", "contracts", "status"],
+  "properties": {
+    "service": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+" },
+    "mesh_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+" },
+    "contracts": {
+      "type": "object",
+      "required": ["publishes", "consumes"],
+      "properties": {
+        "publishes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*@\\d+\\.\\d+\\.\\d+$" }
+        },
+        "consumes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*@\\d+\\.\\d+\\.\\d+$" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": { "type": "string", "enum": ["healthy", "degraded", "unhealthy"] }
+  },
+  "additionalProperties": false
+}

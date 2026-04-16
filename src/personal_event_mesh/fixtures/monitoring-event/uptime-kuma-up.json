@@ -1,0 +1,14 @@
+{
+  "event_type": "monitoring_event",
+  "source": "uptime_kuma",
+  "severity": "resolved",
+  "title": "Scotty is UP",
+  "message": "Monitor 'Scotty' is back UP. Ping: 45ms.",
+  "data": {
+    "monitor_name": "Scotty",
+    "monitor_url": "http://100.74.231.24:8420/health",
+    "status": "up",
+    "ping_ms": 45,
+    "downtime_duration": null
+  }
+}

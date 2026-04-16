@@ -1,0 +1,7 @@
+{
+  "event_type": "monitoring_event",
+  "source": "github_actions",
+  "severity": "critical",
+  "title": "CI backup verification FAILED",
+  "message": "GitHub Actions backup verification workflow failed. Check run logs."
+}

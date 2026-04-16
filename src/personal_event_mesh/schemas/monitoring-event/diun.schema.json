@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/monitoring-event/diun.schema.json",
+  "description": "Data shape for monitoring_event with source=diun",
+  "type": "object",
+  "required": ["image"],
+  "properties": {
+    "image": { "type": "string" },
+    "status": { "type": "string" },
+    "hub_link": { "type": "string" }
+  },
+  "additionalProperties": true
+}

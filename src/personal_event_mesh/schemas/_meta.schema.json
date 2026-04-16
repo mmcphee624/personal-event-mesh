@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mmcphee624/personal-event-mesh/schemas/_meta.schema.json",
+  "description": "Shared definitions for personal event mesh schemas",
+  "$defs": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["info", "warning", "critical", "ok", "resolved", "error"]
+    },
+    "monitoring_source": {
+      "type": "string",
+      "enum": [
+        "uptime_kuma",
+        "diun",
+        "backrest",
+        "pihole_audit",
+        "docker",
+        "homeassistant",
+        "grafana",
+        "github_actions"
+      ]
+    }
+  }
+}

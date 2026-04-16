@@ -16,7 +16,7 @@ class TestRegisterCapability:
         assert isinstance(report, CapabilityReport)
         assert report.service == "my-producer"
         assert report.version == "0.1.0"
-        assert report.mesh_version == "0.1.0"  # from __version__
+        assert report.mesh_version == "0.3.0"  # from __version__
         assert report.publishes == ["deal-alert@1.0.0"]
         assert report.consumes == []
         assert report.status == "healthy"
